@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D播放器</title>
+    <style>
+
+        body,div,ol,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,form,fieldset,legend,input{ margin:0; padding:0;}
+        h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}
+        ol,ul{ list-style:none;}
+        img,fieldset{ border:0 none; display:block;}
+        body{
+            background: url(bg.jpg) no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+/*div{*/
+    /*position:relative;*/
+/*}*/
+        .heart{
+            width:173px;
+            height:157px;
+            display:inline-block;
+            bottom:-173px;
+            left:50px;
+            position:absolute;
+            animation: heart 10s linear 0s infinite normal;
+        }
+        @keyframes heart {
+            0%{
+                bottom:-173px;
+                left:50px;
+                opacity: 1;
+            }
+            25%{
+                bottom:250px;
+                left:150px;
+                opacity:0;
+            }
+            50%{
+                bottom:600px;
+                left:600px;
+                opacity:1;
+            }
+            75%{
+                bottom:250px;
+                left:1200px;
+                opacity:0;
+            }
+            100%{
+                bottom:-173px;
+                left:400px;
+                opacity:1;
+            }
+        }
+ul{
+    width:200px;
+    height:200px;
+    bottom:100px;
+    left: 50%;
+    margin-left:-100px;
+    position:absolute;
+    transform-style:preserve-3D;
+    /*transform:rotateX(-10deg);*/
+    animation:turn 6s linear 0s infinite normal;
+    transition:all 1s;
+}
+@keyframes turn {
+    from{
+        transform: rotateX(-10deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(-10deg) rotateY(360deg);
+    }
+}
+ul li{
+    width:200px;
+    height:200px;
+    line-height: 200px;
+    position:absolute;
+    border:4px solid skyblue;
+    background-color:black;
+    left: 0;
+    top: 0;
+}
+      div ul li img{
+            width:200px;
+            height:200px;
+            box-sizing: border-box;
+        }
+      div ul:hover{
+          animation-play-state: paused;
+      }
+      div ul:hover li img{
+          opacity:0.5;
+      }
+      div ul li:hover img{
+          opacity:1;
+      }
+        div ul li:nth-child(1) {
+             transform: rotateY(60deg) translateZ(200px) ;
+         }
+        div ul li:nth-child(2){
+            transform: rotateY(120deg) translateZ(200px) ;
+        }
+        div ul li:nth-child(3){
+            transform: rotateY(180deg) translateZ(200px) ;
+        }
+        div ul li:nth-child(4){
+            transform: rotateY(240deg) translateZ(200px) ;
+        }
+        div ul li:nth-child(5){
+            transform: rotateY(300deg) translateZ(200px) ;
+        }
+        div ul li:nth-child(6){
+            transform: rotateY(360deg) translateZ(200px) ;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>
+            <img src="1.png"/>
+        </li>
+        <li>
+            <img src="2.jpg"/>
+        </li>
+        <li>
+            <img src="3.jpg"/>
+        </li>
+        <li>
+            <img src="4.gif"/>
+        </li>
+        <li>
+            <img src="5.jpg"/>
+        </li>
+        <li>
+            <img src="6.jpg"/>
+        </li>
+    </ul>
+</div>
+    <img class="heart" src="xin.png"/>
+   <audio autoplay="autoplay" loop="loop" src="江哥最爱的歌.mp3">
+   </audio>
+</body>
+</html>
